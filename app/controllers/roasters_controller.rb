@@ -1,0 +1,3 @@
+class RoastersController < ApplicationController
+
+end
