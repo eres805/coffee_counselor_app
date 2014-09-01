@@ -11,9 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140901183901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coffee_beans", force: true do |t|
+    t.string  "bean_name"
+    t.string  "description"
+    t.string  "image_url"
+    t.integer "price"
+    t.integer "country_id"
+    t.integer "roaster_id"
+    t.integer "flavor_id"
+  end
+
+  create_table "countries", force: true do |t|
+    t.string "country_name"
+    t.string "continent"
+  end
+
+  create_table "flavors", force: true do |t|
+    t.string  "flavor_name"
+    t.integer "tasting_note_id"
+  end
+
+  create_table "roasters", force: true do |t|
+    t.string "roaster_name"
+    t.string "address"
+    t.string "website_url"
+  end
+
+  create_table "tasting_notes", force: true do |t|
+    t.string "note_name"
+  end
+
+  create_table "users", force: true do |t|
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "email"
+    t.boolean "admin"
+    t.string  "password_digest"
+  end
 
 end
