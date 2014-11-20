@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
   resources :users
   
-  resources :coffee_beans do
-    resources :roasters, shallow:true
-    resources :countries, shallow:true
-  end
+  resources :coffee_beans
+
+  resources :roasters
+    
+  resources :countries
+  
 
   root to: 'welcome#index'
 
