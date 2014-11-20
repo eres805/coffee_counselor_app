@@ -1,0 +1,8 @@
+<h1><%= @coffee_bean.bean_name %></h1>
+
+<p><strong>Description:</strong> <%= @coffee_bean.description %></p>
+<p><strong>Price:</strong> <%= @coffee_bean.price %><p>
+<p><strong>Country:</strong> <%= @coffee_bean.country_id %><p>
+<p><strong>Roaster:</strong> <%= link_to @coffee_bean.roaster.roaster_name, roaster_path(@coffee_bean.roaster) %><p>
+<p><strong>Flavor:</strong> <%= @coffee_bean.flavor_id %><p>
+

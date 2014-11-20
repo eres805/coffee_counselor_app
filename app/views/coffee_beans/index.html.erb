@@ -1,0 +1,16 @@
+<h1>Coffee Beans</h1>
+
+
+<% @coffee_beans.each do |bean| %>
+  <h3><%= bean.bean_name %></h3>
+  <p><strong>Bean Desciption: </strong><%= bean.description %></p>
+  <p><strong>Country: </strong><%= bean.country.country_name %></p>
+  <p><strong>Roaster: </strong><%= link_to bean.roaster.roaster_name, roaster_path(bean.roaster) %></p>
+  <p><strong>Flavor: </strong><%= bean.flavor_id %>
+  <p><strong>Price: </strong><%= number_to_currency(bean.price) %></p>
+  <p><img src="<%= bean.image_url %>" /></p>
+
+  <p>
+    <%= link_to "Show", bean %>
+  </p>
+<% end %>

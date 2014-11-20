@@ -1,0 +1,19 @@
+<h1>Countries</h1>
+
+<table>
+	<thead>
+    <tr>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+ <tbody>
+ 		<% @countries.each do |country| %>
+      <tr>
+        <td><%= link_to country.country_name, country -%></td>
+        <td><%= country.continent %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

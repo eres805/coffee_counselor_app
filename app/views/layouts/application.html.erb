@@ -6,6 +6,33 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<nav id="navbar-main-nav" class="navbar">
+   <div class="row">
+  <!-- Toggle for mobile navigation, targeting the <ul> -->
+  <a class="toggle" gumby-trigger="#navbar-main-nav #main-nav" href="#"><i class="icon-menu"></i></a>
+  <h4 class="four columns logo">
+    <a href="/">
+      Coffee Counselor
+    </a>
+  </h4>
+  <ul class="eight columns pull_right">
+    <li><a href="#">About</a></li>
+    <li>
+      <a href="#">Coffee</a>
+      <div class="dropdown">
+        <ul>
+          <li><%= link_to 'Beans', coffee_beans_path %></li>
+          <li><%= link_to 'Roasters', roasters_path %></li>
+          <li><%= link_to 'Countries', countries_path %></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="#">Customize</a></li>
+  </ul>
+</div>
+</nav>
+
 <body>
 
 <%= yield %>
