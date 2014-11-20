@@ -6,8 +6,9 @@ class RoastersController < ApplicationController
 
 	def show
 		@roaster = Roaster.find(params[:id])
-		@roaster_beans = CoffeeBean.find_by(roaster_id: @roaster)
+		@roaster_beans = @roaster.coffee_beans
 	end
+
 
 
 

@@ -3,4 +3,6 @@
 <p><%= @roaster.address %></p>
 <p><%= @roaster.website_url %><p>
 
-<P><%= @roaster_beans.bean_name %></p>
+<% @roaster_beans.each do |bean| %>
+<p><%= bean.bean_name %></p>
+<% end %>

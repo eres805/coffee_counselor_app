@@ -47,12 +47,13 @@
 
 ##--Coffee Beans--##
 
-@bean1 = CoffeeBean.create(bean_name: "Bean One", description: "Description One", image_url: "http://placehold.it/350x150", price: 5.00, country_id: 1, roaster_id: 1, flavor_id: 1)
+# @bean1 = CoffeeBean.create(bean_name: "Bean One", description: "Description One", image_url: "http://placehold.it/350x150", price: 5.00, country_id: 1, roaster_id: 1, flavor_id: 1)
 
-@bean2 = CoffeeBean.create(bean_name: "Bean Two", description: "Description Two", image_url: "http://placehold.it/350x150", price: 4.00, country_id: 2, roaster_id: 2, flavor_id: 2)
+# @bean2 = CoffeeBean.create(bean_name: "Bean Two", description: "Description Two", image_url: "http://placehold.it/350x150", price: 4.00, country_id: 2, roaster_id: 2, flavor_id: 2)
 
-@bean3 = CoffeeBean.create(bean_name: "Bean Three", description: "Description Three", image_url: "http://placehold.it/350x150", price: 3.00, country_id: 3, roaster_id: 3, flavor_id: 3)
+# @bean3 = CoffeeBean.create(bean_name: "Bean Three", description: "Description Three", image_url: "http://placehold.it/350x150", price: 3.00, country_id: 3, roaster_id: 3, flavor_id: 3)
 
+@bean4 = CoffeeBean.create(bean_name: "Bean Four", description: "Description Four", image_url: "http://placehold.it/350x150", price: 3.00, country_id: 1, roaster_id: 1, flavor_id: 1)
 
 
 
