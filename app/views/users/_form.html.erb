@@ -9,34 +9,34 @@
     </ul>
   <% end %>
 
-  <div class="field">
+  <div>
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
 
   <% unless @user.id %>
-    <div class="field">
+    <div>
       <%= f.label :password %><br>
       <%= f.password_field :password %>
     </div>
-    <div class="field">
+    <div>
       <%= f.label :password_confirmation %><br>
       <%= f.password_field :password_confirmation %>
     </div>
   <% end %>
 
   <% if admin? %>
-    <div class="field">
+    <div>
       <%= f.label :admin %><br>
       <%= f.check_box :admin %>
     </div>

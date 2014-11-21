@@ -2,8 +2,9 @@
 <html>
 <head>
   <title>CoffeeCounselorApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
+
   <%= csrf_meta_tags %>
 </head>
 
@@ -11,13 +12,13 @@
    <div class="row">
   <!-- Toggle for mobile navigation, targeting the <ul> -->
   <a class="toggle" gumby-trigger="#navbar-main-nav #main-nav" href="#"><i class="icon-menu"></i></a>
-  <h4 class="four columns logo">
+  <h3 class="four columns logo">
     <a href="/">
       Coffee Counselor
     </a>
-  </h4>
+  </h3>
   <ul class="eight columns pull_right">
-    <li><a href="#">About</a></li>
+    <li><%= link_to 'About', misc_about_path %></li>
     <li>
       <a href="#">Coffee</a>
       <div class="dropdown">
@@ -28,7 +29,21 @@
         </ul>
       </div>
     </li>
-    <li><a href="#">Customize</a></li>
+    <li><%= link_to 'Contact Us', misc_contact_path %></li>
+    <% if current_user == nil %>
+<li><%= link_to 'Login', login_path %></li>
+<li><%= link_to 'Create Account', new_user_path %></li>
+<% else %>
+<li> 
+<%= current_user.first_name %> <%= current_user.last_name %>
+<div class="dropdown">
+        <ul>
+          <li><%= link_to 'Profile Settings', edit_user_path(current_user) %></li>
+          <li><%= link_to 'Logout', logout_path %></li>
+        </ul>
+</div>
+</li>
+<% end %>
   </ul>
 </div>
 </nav>

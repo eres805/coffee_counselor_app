@@ -1,8 +1,13 @@
-<h1><%= @coffee_bean.bean_name %></h1>
+<div class="row">
+	<div class="push_one ten columns">
+	
+	<h2><%= @coffee_bean.bean_name %></h2>
 
-<p><strong>Description:</strong> <%= @coffee_bean.description %></p>
-<p><strong>Price:</strong> <%= @coffee_bean.price %><p>
-<p><strong>Country:</strong> <%= @coffee_bean.country_id %><p>
-<p><strong>Roaster:</strong> <%= link_to @coffee_bean.roaster.roaster_name, roaster_path(@coffee_bean.roaster) %><p>
-<p><strong>Flavor:</strong> <%= @coffee_bean.flavor_id %><p>
+	<p><strong>Description:</strong> <%= @coffee_bean.description %></p>
+	<p><strong>Price:</strong> <%= number_to_currency(@coffee_bean.price) %><p>
+	<p><strong>Country:</strong> <%= link_to @coffee_bean.country.country_name, country_path(@coffee_bean.country) %><p>
+	<p><strong>Roaster:</strong> <%= link_to @coffee_bean.roaster.roaster_name, roaster_path(@coffee_bean.roaster) %><p>
+
+	</div>
+</div>
 

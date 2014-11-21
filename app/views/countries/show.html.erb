@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="push_one ten columns">
+
+  	<h2><%= @country.country_name %></h2>
+
+  	<h4>Continent</h4>
+		<p><%= @country.continent %></p>
+
+		<h4>Beans From <%= @country.country_name %></h4>
+		
+		<ul>
+			<% @country_beans.each do |bean| %>
+				
+					<li><%= link_to bean.bean_name, bean %></li>
+				
+			<% end %>
+		</ul>
+  </div>
+</div>

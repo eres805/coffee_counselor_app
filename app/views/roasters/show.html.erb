@@ -1,8 +1,17 @@
-<h1><%= @roaster.roaster_name %></h1>
+<div class="row">
+  <div class="push_one ten columns">
 
-<p><%= @roaster.address %></p>
-<p><%= @roaster.website_url %><p>
+		<h2><a href="<%= @roaster.website_url %>" target="_blank"><%= @roaster.roaster_name %></a></h2>
 
-<% @roaster_beans.each do |bean| %>
-<p><%= bean.bean_name %></p>
-<% end %>
+		<p><%= @roaster.address %></p>
+	
+		<h4>Beans From <%= @roaster.roaster_name %></h4>
+
+		<ul>
+			<% @roaster_beans.each do |bean| %>
+				<li><%= link_to bean.bean_name, bean %></li>
+			<% end %>
+		</ul>
+
+	</div>
+</div>
