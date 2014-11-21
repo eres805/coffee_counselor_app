@@ -4,5 +4,13 @@
 
 		<h2>Hello, <%= @user.first_name %> <%= @user.last_name %></h2>
 
+		<h3>Favorite Coffees</h3>
+
+		<ul>
+			<% @user.favorite_coffees.each do |coffee| %>
+				<li><%=  coffee.bean_name %></li>
+			<% end %>
+		</ul>
+
 	</div>
 </div>

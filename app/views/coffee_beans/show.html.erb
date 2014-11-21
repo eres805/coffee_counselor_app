@@ -8,6 +8,17 @@
 	<p><strong>Country:</strong> <%= link_to @coffee_bean.country.country_name, country_path(@coffee_bean.country) %><p>
 	<p><strong>Roaster:</strong> <%= link_to @coffee_bean.roaster.roaster_name, roaster_path(@coffee_bean.roaster) %><p>
 
+
+<% if current_user == nil %>
+	<% else %>
+
+<%- unless current_user.favorite_coffees.exists?(id: @coffee_bean.id) -%>
+<%= link_to 'Add to Favorites', favorite_coffees_path(coffee_id: @coffee_bean.id), method: :post %>
+<%- else -%>
+<%= link_to 'Remove from favorites', favorite_coffee_path(@coffee_bean), method: :delete %>
+<%- end -%>
+<% end %>
+
 	</div>
 </div>
 
