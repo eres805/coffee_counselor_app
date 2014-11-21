@@ -35,10 +35,10 @@
 <li><%= link_to 'Create Account', new_user_path %></li>
 <% else %>
 <li> 
-<%= current_user.first_name %> <%= current_user.last_name %>
+<%= link_to current_user.first_name, user_path(current_user) %> 
 <div class="dropdown">
         <ul>
-          <li><%= link_to 'Profile Settings', edit_user_path(current_user) %></li>
+          <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
           <li><%= link_to 'Logout', logout_path %></li>
         </ul>
 </div>
