@@ -1,49 +1,67 @@
-<%= form_for(@user) do |f| %>
+<div class="row">
+  <div class="push_one ten columns">
+  
 
-  <% if @user.errors.any? %>
-    Please correct the following errors:
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+    <%= form_for(@user) do |f| %>
+
+      <% if @user.errors.any? %>
+        Please correct the following errors:
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
 
-  <div>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+      <div class="row">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </div>
+
+      <br />
+
+      <div class="row">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </div>
+
+      <br />
+      
+      <div class="row">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+
+      <br />
+      
+      <div class="row">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+      </div>
+
+      <br />
+      
+      <div class="row">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+
+      <% if admin? %>
+        <div class="row">
+          <%= f.label :admin %>
+          <%= f.check_box :admin %>
+        </div>
+      <% end %>
+
+      <br />
+      
+      <div class="row">
+        <%= f.submit %>
+      </div>
+
+    <% end %>
+
   </div>
+</div>
 
-  <div>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
 
-  <div>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-
-  <% unless @user.id %>
-    <div>
-      <%= f.label :password %><br>
-      <%= f.password_field :password %>
-    </div>
-    <div>
-      <%= f.label :password_confirmation %><br>
-      <%= f.password_field :password_confirmation %>
-    </div>
-  <% end %>
-
-  <% if admin? %>
-    <div>
-      <%= f.label :admin %><br>
-      <%= f.check_box :admin %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>

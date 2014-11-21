@@ -1,7 +1,16 @@
-<h1><%= link_to @user.first_name, @user %><h1>
-<h2>Edit Profile</h2>
+<div class="row">
+	<div class="push_one ten columns">
 
-<%= render 'form' %>
+		<h2>Edit <%= link_to @user.first_name, @user %> Profile</h2>
 
-<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', users_path %>
+	</div>
+
+		<%= render 'form' %>
+
+	<div class="push_one ten columns">
+		<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
+		<%= link_to 'Back', root_path %>
+	</div>
+
+	
+</div>
