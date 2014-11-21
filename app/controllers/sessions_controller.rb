@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
 
   def new
-
+    if current_user
+      redirect_to user_path(current_user)
+    end
   end
 
   def create
@@ -10,13 +12,11 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      flash.now[:login_error] = 'Invalid email and/or password'
       render 'new'
     end
   end
 
   def destroy
-    flash[:auth_error] = nil
     session[:user_id] = nil
     redirect_to login_path
   end

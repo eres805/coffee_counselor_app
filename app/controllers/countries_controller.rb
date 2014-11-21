@@ -6,6 +6,7 @@ class CountriesController < ApplicationController
 
 	def show
 		@country = Country.find(params[:id])
+		@country_beans = @country.coffee_beans
 	end
 
 end

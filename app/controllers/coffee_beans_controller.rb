@@ -8,7 +8,6 @@ class CoffeeBeansController < ApplicationController
 
 	def show
 		@coffee_bean = CoffeeBean.find(params[:id])
-		@roaster = Roaster.where(params[:roaster_id])
 	end
 
 	
