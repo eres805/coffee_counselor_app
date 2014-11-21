@@ -13,7 +13,7 @@ Washington DC, 20011", website_url: "http://qualiacoffee.com/")
 
 @vigilante = Roaster.create(roaster_name: "Vigilante Coffee", address: "4327 Gallatin Street, Hyattsville, MD 20781", website_url: "http://vigilantecoffee.com/")
 
-@ceremony = Roaster.create(roaster_name: "Ceremony Coffee Roasters", address: "Suite 500, 90 Russell St, Annapolis, MD 21401", website_url: "http://ceremonycoffee.com/")
+@ceremony = Roaster.create(roaster_name: "Ceremony Coffee Roasters", address: "90 Russell St, Suite 500, Annapolis, MD 21401", website_url: "http://ceremonycoffee.com/")
 
 
 ##--Flavors--##
