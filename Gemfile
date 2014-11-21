@@ -38,6 +38,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem "modernizr-rails"
 gem "gumby-framework"
 
+gem 'rails_12factor', group: :production
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
