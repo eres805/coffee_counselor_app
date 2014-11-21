@@ -8,9 +8,12 @@
 
 		<ul>
 			<% @user.favorite_coffees.each do |coffee| %>
-				<li><%=  coffee.bean_name %></li>
+				<li><%= link_to coffee.bean_name, coffee_bean_path(coffee.id) %></li>
 			<% end %>
 		</ul>
 
 	</div>
 </div>
+
+
+
