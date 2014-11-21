@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     
   resources :countries
 
+  resources :favorite_coffees, only: [:create, :destroy]
+
   get 'misc/about'
   get 'misc/contact'
   
